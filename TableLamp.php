@@ -13,13 +13,11 @@ class TableLamp {
     /**
      * @param int $value
      */
-    public function setBrightness($value = 0)
+    public function setBrightness()
     {
-        if ($value > 0){
-		if ($value < 100) {
-	            $this->rheostat->setPower($value);
-        	    $this->condition = true;
-		}
+        if ($value > 0 && $value < 100){
+            $this->rheostat->setPower($value);
+            $this->condition = true;
         } else {
             $this->setCondition(false);
         }
